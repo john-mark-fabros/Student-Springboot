@@ -5,15 +5,16 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
-@Service
-public class StudentService {
+//@Service
+public interface StudentService {
 
-    public List<Student> getStudent() {
-        return List.of(
-                new Student("john mark",
-                        "fabros", LocalDate.now(),
-                        "fabrosjohnmarka@gmail.com",
-                        23)
-        );
-    }
+    Student save(Student student);
+
+    List<Student> findAllStudent();
+    Student findByEmail(String email);
+
+    Student updateStudent(Student student);
+
+    void deleteByEmail(String email);
+
 }
